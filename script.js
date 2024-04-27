@@ -97,3 +97,22 @@ document.querySelectorAll(".elem").forEach(function (elem) {
     });
   });
 });
+
+// Function to get the current time and update the element content
+function updateTime() {
+    // Get the current date and time
+    const now = new Date();
+
+    // Format the time as HH:mm AM/PM
+    const formattedTime = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+
+    // Update the content of the element with the current time
+    document.getElementById('currentTime').textContent = formattedTime;
+}
+
+// Call updateTime function initially to set the initial time
+updateTime();
+
+// Update the time every second
+setInterval(updateTime, 1000);
+
